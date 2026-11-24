@@ -1,7 +1,5 @@
 import random
 
-print("so git the goat?")
-
 
 def get_guess(low, high, current_attempt_num):
     while True:
