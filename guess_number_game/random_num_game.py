@@ -40,10 +40,10 @@ def show_result(status, tries_left, attempts):
         return False
 
 
-def game_start_message():
+def game_start_message(low, high, max_attempts):
     print("Welcome to guess the Number!")
     print(
-        f"i have picked a number between {minimum_number} and {maximum_number}. you have {max_attempts} tries."
+        f"i have picked a number between {low} and {high}. you have {max_attempts} tries."
     )
 
 
@@ -80,7 +80,7 @@ attempts_so_far = 1
 
 secret = randint(minimum_number, maximum_number)
 
-game_start_message()
+game_start_message(minimum_number, maximum_number, max_attempts)
 
 hint_round = 3
 
@@ -106,7 +106,7 @@ while attempts_so_far <= max_attempts:
             attempts_so_far = 1
             minimum_number, maximum_number, max_attempts = set_difficulty()
             secret = randint(minimum_number, maximum_number)
-            game_start_message()
+            game_start_message(minimum_number, maximum_number, max_attempts)
 
         else:
             print("Thank you for playing! Goodbye.")
