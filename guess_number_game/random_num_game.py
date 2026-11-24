@@ -43,7 +43,7 @@ def show_result(status, tries_left, attempts):
 def game_start_message(low, high, max_attempts):
     print("Welcome to guess the Number!")
     print(
-        f"i have picked a number between {low} and {high}. you have {max_attempts} tries."
+        f"I have picked a number between {low} and {high}. you have {max_attempts} tries."
     )
 
 
