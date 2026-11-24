@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 
 def get_guess(low, high, current_attempt_num):
@@ -58,9 +58,9 @@ def set_difficulty():
             break
         print("please enter one of the correct options. ")
 
-    if difficulty.strip().lower() == "easy":
+    if difficulty == "easy":
         return 1, 50, 5
-    elif difficulty.strip().lower() == "normal":
+    elif difficulty == "normal":
         return 1, 100, 7
     else:
         return 1, 1000, 10
@@ -78,7 +78,7 @@ def give_hint(secret):
 minimum_number, maximum_number, max_attempts = set_difficulty()
 attempts_so_far = 1
 
-secret = random.randint(minimum_number, maximum_number)
+secret = randint(minimum_number, maximum_number)
 
 game_start_message()
 
@@ -104,8 +104,8 @@ while attempts_so_far <= max_attempts:
         play_again = input("Play again? (y/n): ")
         if play_again.strip().lower() != "n":
             attempts_so_far = 1
-            secret = random.randint(minimum_number, maximum_number)
             minimum_number, maximum_number, max_attempts = set_difficulty()
+            secret = randint(minimum_number, maximum_number)
             game_start_message()
 
         else:
